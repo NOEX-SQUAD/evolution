@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/layout.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/registerForm.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/loginForm.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/addNovel.css' %}">
+    <script src="https://kit.fontawesome.com/5aaaf05d1d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">NOEX SQUAD</div>
+        <nav class="active">
+            <ul>
+                <li><a class="active" href="/">หน้าหลัก</a></li>
+                <li><a href="/novel">ชั้นหนังสือ</a></li>
+                {% if user.is_authenticated %}
+                    <li><a href="/addNovel">เพิ่มหนังสือ</a></li>
+                    <li><a>สวัสดี, {{ user.username }}</a></li>
+                    <li><a href="/logout">ออกระบบ</a></li>
+                {% else %}
+                    <li><a href="/createAccount">ลงทะเบียน</a></li>
+                    <li><a href="/signin">ลงชื่อเข้าใช้</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+
+    {% block content %}
+
+    {% endblock %}
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.menu-toggle').click(function () {
+                $('nav').toggleClass('active')
+            })
+        })
+    </script>
+</body>
+</html>
+

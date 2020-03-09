@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="login-container">
+        <h2 align="center">เข้าสู่ระบบ</h2>
+        <form action="login" method="post">
+            {% csrf_token %}
+            <ul class="list">
+                <li><input type="text" name="username" placeholder="Username"></li>
+                <li><input type="password" name="password" placeholder="Password"></li>
+                <li><input type="submit" name="submit" value="login"></li>
+                {% if messages %}
+                <div>
+                    {% for message in messages %}
+                        {{ message }}
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </ul>
+        </form>
+    </div>
+{% endblock %}

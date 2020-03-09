@@ -1,0 +1,38 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.register-container{
+    width: 472px;
+    height: auto;
+    padding: 30px 50px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 #000;
+    margin: 150px auto;
+}
+ul.list {
+    list-style-type: none;
+    text-align: center;
+}
+ul.list li{
+    width: 400px;
+    margin-bottom: 30px;
+    background-size: 100%;
+}
+ul.list li input{
+    width: 350px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    background-color: #d3d3d3;
+    padding: 15px;
+    font-size: 15px;
+}
+ul.list li input[name='submit']{
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+    background-color: green;
+    padding: 15px;
+}
